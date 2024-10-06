@@ -1,5 +1,11 @@
 class Solution:
     def areSentencesSimilar(self, sentence1: str, sentence2: str) -> bool:
+        """
+        This function checks if two sentences are similar. A sentence is considered similar to another
+        if it can be obtained by inserting some words into the other sentence. The function returns True
+        if the sentences are similar, and False otherwise.
+        """
+
         # Ensure sentence1 is the shorter one
         if len(sentence2) < len(sentence1):
             sentence1, sentence2 = sentence2, sentence1
@@ -57,6 +63,12 @@ class Solution:
             return True
         
         return False
+
+# Test Case: This will fail
+sentence1 = "A"
+sentence2 = "a A b A"
+solution = Solution()
+print(solution.areSentencesSimilar(sentence1, sentence2))  # Expected output: True, but will return False
 
 # Time Complexity: O(n + m)
 # The algorithm iterates through both sentences, where n and m are the number of words in each sentence.
